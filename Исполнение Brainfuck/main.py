@@ -77,9 +77,9 @@ def launch_brainfuck(code): # запуск кода
         
         
 def main():
-	file = open("code.bf", "r")
-	code = file.read()
-	launch_brainfuck(code)
+    file = open("code.bf", "r")
+    code = file.read()
+    launch_brainfuck(code)
 	
 	
 if __name__ == "__main__":
