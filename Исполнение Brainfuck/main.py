@@ -9,6 +9,8 @@ sim = '><+-.,[]'
 Аргументы:
 - code: строка с кодом Brainfuck.
 """
+
+
 def clear_code(code): # очищает код от лишнего
     return ''.join(c for c in code if c in sim)
    
