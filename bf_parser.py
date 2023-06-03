@@ -134,6 +134,7 @@ def main():
         code = file.read()
     #code = "--[++--]++"
     ast = generate_ast(code)
+    print(ast)
 
 if __name__ == "__main__":
     main()
