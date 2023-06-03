@@ -1,9 +1,29 @@
 sim = '><+-.,[]'
-def clear_code(code):
+
+
+"""
+Функция: clear_code
+
+Описание: Функция очищает код,  от символов, которые не используются в языке brainfuck
+
+Аргументы:
+- code: строка с кодом Brainfuck.
+"""
+def clear_code(code): # очищает код от лишнего
     return ''.join(c for c in code if c in sim)
+   
     
-    
-def ras_on_blocks(code):
+"""
+Функция: ras_on_blocks
+
+Описание: Позволяет определить начало и конец каждого цикла Brainfuck
+
+Аргументы:
+- code: строка с кодом Brainfuck.
+"""  
+
+ 
+def ras_on_blocks(code): # разделяем код на блоки
     otkr = []
     blocki = {}
     for i in range(len(code)):
@@ -15,7 +35,17 @@ def ras_on_blocks(code):
     return blocki
 
 
-def main(code):
+"""
+Функция: launch_brainfuck
+
+Описание: функция, выполняющая интерпретацию языка программирования Brainfuck
+
+Аргументы:
+- code: строка с кодом Brainfuck.
+""" 
+
+
+def launch_brainfuck(code): # запуск кода
     code = clear_code(code)
     x = i = 0
     bf = {0: 0}
@@ -42,6 +72,13 @@ def main(code):
             if bf[x]: 
             	i = blocks[i]
         i += 1
-file = open("code.bf", "r")
-code = file.read()
-main(code)
+        
+        
+def main():
+	file = open("code.bf", "r")
+	code = file.read()
+	launch_brainfuck(code)
+	
+	
+if __name__ == "__main__":
+    main()
