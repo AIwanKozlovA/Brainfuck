@@ -76,8 +76,9 @@ def generate_ast(code):
     #Форматируем дерево
     tree = ET.ElementTree(ast_root)
     ET.indent(tree, '\t')
+   #Записываем дерево в файл output.xml
     tree.write("output.xml", encoding="utf-8", xml_declaration=True)
-    print(ET.tostring(ast_root, encoding="unicode"))
+    retur ET.tostring(ast_root, encoding="unicode")
 
 
 """
