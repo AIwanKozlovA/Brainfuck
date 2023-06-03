@@ -133,7 +133,7 @@ def main():
     with open(input("Введите путь к файлу с расширенем .bf\n"), "r") as file:
         code = file.read()
     #code = "--[++--]++"
-    generate_ast(code)
+    ast = generate_ast(code)
 
 if __name__ == "__main__":
     main()
